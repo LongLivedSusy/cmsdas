@@ -26,6 +26,9 @@ hfake = fb.Get('hFakeBaseline_BinNumberTruth')
 #print hfake.Integral()
 
 hsig = fs.Get('hAnalysisBins')
+
+print hsig
+
 hsig.Scale(135000.)
 #print hsig.Integral()
 hsig.SetName('Signal')
