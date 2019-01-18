@@ -181,15 +181,16 @@ def frange(start, stop, step):
 # MAIN
 def main():
  
-    labels = [ ]
+    labels = [10, 30, 50, 100, 1000]
+    labels = [str(x) for x in labels]
     values = [ ]
-    for theta_B in frange(0.0,5.0,1):
-        values.append(theta_B)
-        label = "%d" % (theta_B*10)
-        labels.append(label)
+    #for theta_B in frange(0.0,5.0,1):
+    #    values.append(theta_B)
+    #    label = "%d" % (theta_B*10)
+    #    labels.append(label)
  
-    createDataCardsThetaB(labels,values)
-    executeDataCards(labels)
+    #createDataCardsThetaB(labels,values)
+    #executeDataCards(labels)
     plotUpperLimits(labels,values)
  
  
