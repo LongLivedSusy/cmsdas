@@ -251,10 +251,12 @@ readerLong = TMVA.Reader()
 trackerXml = 'usefulthings/cmssw8-newpresel2-200-4-medium-updated/weights/TMVAClassification_BDT.weights.xml'
 prepareReaderLong(readerLong, trackerXml)
 
-
+'''
 fMask = TFile('usefulthings/Masks.root')
 if 'Run2016' in fnamekeyword: hMask = fMask.Get('hEtaVsPhiDT_maskData-2016Data-2016')
 else: hMask = fMask.Get('hEtaVsPhiDT_maskMC-2016MC-2016')
+'''	
+hMask = ''
 
 c = TChain('TreeMaker2/PreSelection')
 filenamelist = glob(fnamekeyword)
