@@ -13,7 +13,7 @@ from distracklibs import *
 hAnalysisBins = TH1F('hAnalysisBins','hAnalysisBins',33,0,33)
 histoStyler(hAnalysisBins, kBlack)
 
-defaultInfile = 'root://cmsxrootd.fnal.gov//store/user/cmsdas/2019/long_exercises/DisappearingTracks/Ntuples/g1800_chi1400_27_200970_step4_100.root'
+defaultInfile = '/eos/uscms/store/user/cmsdas/2019/long_exercises/DisappearingTracks/Ntuples/g1800_chi1400_27_200970_step4_100.root'
 import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbosity", type=bool, default=False,help="analyzer script to batch")
