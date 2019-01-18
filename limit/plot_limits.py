@@ -30,6 +30,7 @@ def plotLimit(json_file):
     h_exp0 = TH1D("h_exp0","h_exp0", n_bins, 0, n_bins)
     for i, limit in enumerate(exp0_list):
         h_exp0.Fill(i, limit) 
+        h_exp0.GetXaxis().SetBinLabel(i+1, str(ctau_list[i]))
     canvas = TCanvas("canvas", "canvas", 900, 800)
     h_exp0.Draw("hist")
     h_exp0.GetYaxis().SetRangeUser(0, 0.2)
