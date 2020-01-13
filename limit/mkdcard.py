@@ -24,8 +24,9 @@ procs = [
 yields = []
 for p in procs:
     yields.append(fr.Get(p).Integral())
-print "Yields:",
-print yields
+
+#print "Yields:",
+#print yields
 
 # Shape systematics
 syst = [

@@ -9,27 +9,37 @@ ctau = sys.argv[1]
 fs = TFile('skim_g1800_chi1400_27_200970_step4_'+ctau+'.root')
 fb = TFile('totalweightedbkgsDataDrivenMC.root')
 
+sig_scale = 38400.0
+bck_scale = sig_scale / 135000.0
+
 # Get all histograms
 hele = fb.Get('hElBaseline_BinNumberMethod')
+hele.Scale(bck_scale)
 #print hele.Integral()
 
 helet = fb.Get('hElBaseline_BinNumberTruth')
+helet.Scale(bck_scale)
 #print helet.Integral()
 
 hmu = fb.Get('hMuBaseline_BinNumberMethod')
+hmu.Scale(bck_scale)
 #print hmu.Integral()
 
 hmut = fb.Get('hMuBaseline_BinNumberTruth')
+hmut.Scale(bck_scale)
 #print hmut.Integral()
 
 hfake = fb.Get('hFakeBaseline_BinNumberTruth')
+hfake.Scale(bck_scale)
 #print hfake.Integral()
 
 hsig = fs.Get('hAnalysisBins')
 
-print hsig
+#print hsig
 
-hsig.Scale(135000.)
+#hsig.Scale(135000.)
+hsig.Scale(sig_scale)
+
 #print hsig.Integral()
 hsig.SetName('Signal')
 
